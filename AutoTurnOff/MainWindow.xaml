@@ -1,0 +1,40 @@
+﻿<Window x:Class="AutoTurnOff.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTurnOff"
+        mc:Ignorable="d"
+        Title="Switch Off Timer" Height="150" Width="275" WindowStartupLocation="CenterScreen" Icon="Images/ikona-01.jpg">
+	<Grid>
+		<Grid.Background>
+			<ImageBrush ImageSource="Images/tlo-01.jpg" Stretch="UniformToFill"/>
+		</Grid.Background>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<!--<TextBox Name="TimeTextBox" TextAlignment="Center" FontSize="20" Text="00:00:00" Height="30" Width="110" VerticalContentAlignment="Center" />-->
+		<Grid Name="EnterTimeGrid" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+			</Grid.ColumnDefinitions>
+
+			<TextBox Name="HoursTextBox" TextAlignment="Center" FontSize="20" Text="00" Height="30" Width="40" Background="#BFFFFFFF" VerticalContentAlignment="Center" MouseDoubleClick="SelectAddress" GotKeyboardFocus="SelectAddress" PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton" />
+			<Label Content="h" Grid.Column="1" VerticalAlignment="Center" FontSize="20" />
+			<TextBox Name="MinutesTextBox" Grid.Column="2" TextAlignment="Center" FontSize="20" Text="00" Height="30" Width="40" Background="#BFFFFFFF" VerticalContentAlignment="Center" MouseDoubleClick="SelectAddress" GotKeyboardFocus="SelectAddress" PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
+			<Label Content="m" Grid.Column="3" VerticalAlignment="Center" FontSize="20"/>
+			<TextBox Name="SecondsTextBox" Grid.Column="4" TextAlignment="Center" FontSize="20" Text="00" Height="30" Width="40" Background="#BFFFFFFF" VerticalContentAlignment="Center" MouseDoubleClick="SelectAddress" GotKeyboardFocus="SelectAddress" PreviewMouseLeftButtonDown="SelectivelyIgnoreMouseButton"/>
+			<Label Content="s" Grid.Column="5" VerticalAlignment="Center" FontSize="20"/>
+		</Grid>
+
+		<Label Name="lblTime" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="Red" Background="#BFFFFFFF"/>
+		<Button Name="Button" Opacity="0.75" Content="Start" Grid.Row="1" Height="25" Width="90" IsDefault="True" Click="Button_Click"/>
+	</Grid>
+</Window>
